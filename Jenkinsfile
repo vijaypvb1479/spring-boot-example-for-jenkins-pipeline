@@ -21,4 +21,8 @@ node() {
        GIT_BRANCH = scmVars.GIT_BRANCH
         echo "${GIT_COMMIT_SHORT} - ${BUILD_DATE} - ${GIT_COMMIT} - ${GIT_URL} - ${GIT_BRANCH} - ${version} - ${BUILD_ID}"
     }
+    
+    stage('Build'){
+        sh "./gradlew -Pversion=${version} build"
+    }
 }
