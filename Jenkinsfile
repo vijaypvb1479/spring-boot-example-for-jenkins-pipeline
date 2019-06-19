@@ -6,13 +6,13 @@ def GIT_BRANCH = null
 def BUILD_DATE = null
 
 
-def DEPLOYMENT_PROJECTS = [new DeploymentProject(name: 'bff-mobile-trade', path: 'bff', integrationTestRequired: false,
-                imageStreamName: 'bff-mobile-trade-v1', openshiftDeployRequired: false)]
+//def DEPLOYMENT_PROJECTS = [new DeploymentProject(name: 'bff-mobile-trade', path: 'bff', integrationTestRequired: false,
+//                imageStreamName: 'bff-mobile-trade-v1', openshiftDeployRequired: false)]
 
 node() {
     stage('Checkout Source') {
        def scmVars = checkout scm
-       echo "Checkedout ${scmVars} deployment projects are ${DEPLOYMENT_PROJECTS}"
+       echo "Checkedout ${scmVars} deployment projects are " //${DEPLOYMENT_PROJECTS}"
        GIT_COMMIT_SHORT = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
        BUILD_DATE = sh(returnStdout: true, script: ' date --utc -Iseconds').trim()
        GIT_COMMIT = scmVars.GIT_COMMIT
