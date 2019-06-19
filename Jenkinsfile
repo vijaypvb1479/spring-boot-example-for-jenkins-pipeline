@@ -14,7 +14,7 @@ node() {
        def scmVars = checkout scm
        echo "Checkedout ${scmVars} deployment projects are " //${DEPLOYMENT_PROJECTS}"
        GIT_COMMIT_SHORT = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
-       BUILD_DATE = sh(returnStdout: true, script: ' date --utc -Iseconds').trim()
+       BUILD_DATE = sh(returnStdout: true, script: ' date +%Y-%m-%d-%H-%M-%S').trim()
        GIT_COMMIT = scmVars.GIT_COMMIT
        GIT_URL = scmVars.GIT_URL
        GIT_BRANCH = scmVars.GIT_BRANCH
