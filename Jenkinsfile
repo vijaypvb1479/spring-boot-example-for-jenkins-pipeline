@@ -25,6 +25,7 @@ node() {
     stage('Build'){
         sh "./gradlew clean -Pversion=${version} build"
          step([$class: 'JUnitResultArchiver', testResults: '*build/test-results/test/*.xml'])
+        jacoco()
     }
     
    
