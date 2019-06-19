@@ -29,7 +29,11 @@ node() {
     }
     
     stage('Jacoco Coverage'){
-    jacoco buildOverBuild: true, maximumBranchCoverage: '80', maximumClassCoverage: '80', maximumComplexityCoverage: '80', maximumInstructionCoverage: '80', maximumLineCoverage: '80', maximumMethodCoverage: '80', minimumBranchCoverage: '80', minimumClassCoverage: '80', minimumComplexityCoverage: '80', minimumInstructionCoverage: '80', minimumLineCoverage: '80', minimumMethodCoverage: '80'
+        jacoco buildOverBuild: true, changeBuildStatus: true, maximumBranchCoverage: '80', 
+            maximumClassCoverage: '80', maximumComplexityCoverage: '80', maximumInstructionCoverage: '80', 
+            maximumLineCoverage: '80', maximumMethodCoverage: '80', minimumBranchCoverage: '80', minimumClassCoverage: '80',
+            minimumComplexityCoverage: '80', minimumInstructionCoverage: '80', minimumLineCoverage: '80',
+            minimumMethodCoverage: '80'
     }
     
    
