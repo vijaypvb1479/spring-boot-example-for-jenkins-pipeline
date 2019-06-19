@@ -24,7 +24,7 @@ node() {
     
     stage('Build'){
         sh "./gradlew -Pversion=${version} build"
-         step([$class: 'JUnitResultArchiver', testResults: './test-results/test/*.xml'])
+         step([$class: 'JUnitResultArchiver', testResults: '*build/test-results/test/*.xml'])
     }
     
    
